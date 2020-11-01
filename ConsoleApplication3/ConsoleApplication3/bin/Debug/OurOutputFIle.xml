@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <mpesadata>
+    <IdNumber>8462672</IdNumber>
+    <FName>Peter</FName>
+    <LName>Mawera</LName>
+    <Amount>2000</Amount>
+    <FulizaAmount>200</FulizaAmount>
+    <mshwariAmount>100</mshwariAmount>
+    <okoaJahaziAmount>80</okoaJahaziAmount>
+  </mpesadata>
+  <mpesadata>
+    <IdNumber>34162166</IdNumber>
+    <FName>Moses</FName>
+    <LName>Karanja</LName>
+    <Amount>1000</Amount>
+    <FulizaAmount>0</FulizaAmount>
+    <mshwariAmount>0</mshwariAmount>
+    <okoaJahaziAmount>0</okoaJahaziAmount>
+  </mpesadata>
+</NewDataSet>
