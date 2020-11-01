@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.IO;
 using System.Xml;
@@ -13,9 +13,9 @@ namespace ConsoleApplication3
         {
             Program myPro = new Program();
             //OurXml oX = new OurXml();
-            
+
             string connStr = "server=localhost;user=moseskaranja;database=tester;port=3306;password=Moses18.";
-           
+
             MySqlConnection conn = new MySqlConnection(connStr);
             try
             {
@@ -27,7 +27,7 @@ namespace ConsoleApplication3
                 MySqlDataAdapter da = new MySqlDataAdapter(sql,conn);
                 //MySqlDataReader rdr = cmd.ExecuteReader();
                 //int item = 0;
-                
+
                 /*while (rdr.Read())
                 {
                     Console.WriteLine(rdr[0]);
@@ -37,30 +37,30 @@ namespace ConsoleApplication3
                     Console.WriteLine(rdr[4]);
                     Console.WriteLine(rdr[5]);
                     Console.WriteLine(rdr[6]);
-                    
-                    
+
+
                 }*/
-                
+
                 DataSet ds = new DataSet();
                 //fill dataset
                 da.Fill(ds,"mpesadata");
                 ds.WriteXml("newOutputFIle.xml");
-                
-                
-                
+
+
+
                 /*XmlSerializer desSerializer = new XmlSerializer(typeof(NewDataSet));
                 TextReader reader = new StreamReader("OurOutputFIle.xml");
                 object obj = desSerializer.Deserialize(reader);
                 Console.WriteLine("Our object");
                 Console.WriteLine(obj);
-            
+
                 mpesadata xmlData = (mpesadata) obj;
-                
+
                 NewDataSet xmlDatat = (NewDataSet)obj;
                 Console.WriteLine("Our xml data");
                 Console.WriteLine(xmlDatat);*/
-                
-                
+
+
                 /*
                 int idNum = xmlDatat.mpesadataList[0].IdNumber;
                 String fname = xmlDatat.mpesadataList[0].FName;
@@ -70,21 +70,21 @@ namespace ConsoleApplication3
                 Double mshAmt = xmlDatat.mpesadataList[0].mshwariAmount;
                 Double jahaAmt = xmlDatat.mpesadataList[0].okoaJahaziAmount;
                 */
-                
-                
-                
+
+
+
                 /*
                 Console.WriteLine(fname);
                 Console.WriteLine(lName);
                 Console.WriteLine(amt);
                 */
-                
+
                 //reader.Close();
-                
+
                 XmlRootAttribute xRoot = new XmlRootAttribute();
                 xRoot.ElementName = "NewDataSet";
                 xRoot.IsNullable = true;
-                
+
                 /*
                 mpesadata md = null;
                 string path = "OurOutputFIle.xml";
@@ -104,24 +104,24 @@ namespace ConsoleApplication3
                 Console.WriteLine(md.okoaJahaziAmount);
                 */
                 
-                
-                
+
+
                 XmlSerializer deserializer = new XmlSerializer(typeof(NewDataSet));
                 TextReader rd = new StreamReader("OurOutputFIle.xml");
                 object obj = deserializer.Deserialize(rd);
 
                 NewDataSet newDt = (NewDataSet) obj;
-                
-                Console.WriteLine(newDt.mDataList[0].IdNumber);
-                Console.WriteLine(newDt.mDataList[0].FName);
-                Console.WriteLine(newDt.mDataList[0].LName);
-                Console.WriteLine(newDt.mDataList[0].FulizaAmount);
-                Console.WriteLine(newDt.mDataList[0].okoaJahaziAmount);
-                
-                
+
+                Console.WriteLine( "My ID number: "+newDt.mDataList[0].IdNumber);
+                Console.WriteLine("First Name: "+ newDt.mDataList[0].FName);
+                Console.WriteLine("Last Name: "+ newDt.mDataList[0].LName);
+                Console.WriteLine("Fuliza Amount: "+ newDt.mDataList[0].FulizaAmount);
+                Console.WriteLine("OkoaJahazi Amount "+ newDt.mDataList[0].okoaJahaziAmount);
+                Console.WriteLine("MshwariAmount: "+ newDt.mDataList[0].mshwariAmount);
+
 
                 rd.Close();
-   
+
 
 
                 //NewDataSet XmlData = (NewDataSet)obj;
@@ -139,7 +139,7 @@ namespace ConsoleApplication3
 
                 /*
                 myPro.deserializeXML();
-                
+
                 Console.WriteLine(myPro.IdNumber);
                 Console.WriteLine(myPro.FName);
                 Console.WriteLine(myPro.LName);
@@ -157,16 +157,16 @@ namespace ConsoleApplication3
                 {
                     rdr.Read();
                     item = item + 1;
+
                     Console.WriteLine(rdr[item]);
 
                 }
                 */
 
-
                 /*foreach (String itemValue in rdr)
                 {
                     Console.WriteLine(itemValue);
-                    
+
                 }*/
 
                 //rdr.Close();
@@ -176,17 +176,17 @@ namespace ConsoleApplication3
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                //throw;  
-            }    
+                //throw;
+            }
             conn.Close();
             Console.WriteLine("DONE...");
-            
-                
-                
-                
+
+
+
+
             /*
             Console.WriteLine("Hello world");
-            
+
             XmlTextReader textReader = new XmlTextReader("books.xml");
             myPro.OutputToConsole();
             */
@@ -206,6 +206,6 @@ namespace ConsoleApplication3
             throw new NotImplementedException();
         }
     }*/
-    
-    
+
+
 }
